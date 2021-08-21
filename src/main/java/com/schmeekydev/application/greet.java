@@ -8,16 +8,16 @@ import org.javacord.api.listener.message.MessageCreateListener;
 public class greet implements MessageCreateListener {
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
-        Random rand = new Random();
+        Random randomGenerator = new Random();
         String[] greetings = { "Marhaba", "Namaskar", "Hola", "Bonjour", "Guten Tag", "Shalom", "Salve",
                 "Konnichiwa, Senpai >~<\"\"", "Assalamualaikum", "Namaste", "Wadakkam, anna" };
 
-        Message mes = event.getMessage();
-        String[] str = mes.getContent().split(" ");
+        Message message = event.getMessage();
+        String[] textArray = message.getContent().split(" ");
 
         try {
-            if (str[0].equalsIgnoreCase("hi") || str[0].equals("hello")) {
-                event.getChannel().sendMessage(greetings[rand.nextInt(greetings.length)]);
+            if (textArray[0].equalsIgnoreCase("hi") || textArray[0].equals("hello")) {
+                event.getChannel().sendMessage(greetings[randomGenerator.nextInt(greetings.length)]);
             }
         } catch (Exception exception) {
 

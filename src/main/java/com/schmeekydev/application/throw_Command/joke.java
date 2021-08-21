@@ -1,4 +1,4 @@
-package com.schmeekydev.application.makeme;
+package com.schmeekydev.application.throw_Command;
 
 import org.javacord.api.entity.message.Message;
 import org.javacord.api.event.message.MessageCreateEvent;
