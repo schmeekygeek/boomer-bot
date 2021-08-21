@@ -5,7 +5,7 @@ import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 import java.util.Random;
 
-public class makemelaugh implements MessageCreateListener {
+public class joke implements MessageCreateListener {
 
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
@@ -51,8 +51,13 @@ public class makemelaugh implements MessageCreateListener {
                 "What did one hat say to the other? Stay here! I\'m going on ahead.",
                 "Why did Billy get fired from the banana factory? He kept throwing away the bent ones." };
         Message message = event.getMessage();
-        if (message.getContent().equals("-makemelaugh")) {
-            event.getChannel().sendMessage(jokes[randomGenerator.nextInt(jokes.length)]);
+        String[] command = message.getContent().split(" ");
+        try {
+            if (command[0].equalsIgnoreCase("throw") && command[1].equalsIgnoreCase("joke")) {
+                event.getChannel().sendMessage(jokes[randomGenerator.nextInt(jokes.length)]);
+            }
+        } catch (ArrayIndexOutOfBoundsException exception) {
+
         }
     }
 }
