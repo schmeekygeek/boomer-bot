@@ -24,9 +24,34 @@ public class makemelaugh implements MessageCreateListener {
                 "What did the janitor say when he jumped out of the closet? Supplies!",
                 "Have you heard about the chocolate record player? It sounds pretty sweet.",
                 "What did the ocean say to the beach? Nothing, it just waved.",
-                "Why do seagulls fly over the ocean? Because if they flew over the bay, we'd call them bagels." };
-        Message mes = event.getMessage();
-        if (mes.getContent().equals("-makemelaugh")) {
+                "Why do seagulls fly over the ocean? Because if they flew over the bay, we'd call them bagels.",
+                "I only know 25 letters of the alphabet. I don't know y.",
+                "How does the moon cut his hair? Eclipse it.",
+                "What did one wall say to the other? I'll meet you at the corner.",
+                "What did the zero say to the eight? That belt looks good on you.",
+                "A skeleton walks into a bar and says, \'Hey, bartender. I'll have one beer and a mop.\'",
+                "Where do fruits go on vacation? Pear-is!", "I asked my dog what's two minus two. He said nothing.",
+                "What did Baby Corn say to Mama Corn? Where\'s Pop Corn?",
+                "What's the best thing about Switzerland? I don't know, but the flag is a big plus.",
+                "What does a sprinter eat before a race? Nothing, they fast!",
+                "Where do you learn to make a banana split? Sundae school.",
+                "What has more letters than the alphabet? The post office!",
+                "Dad, did you get a haircut? No, I got them all cut!",
+                "What do you call a poor Santa Claus? St. Nickel-less.",
+                "I got carded at a liquor store, and my Blockbuster card accidentally fell out. The cashier said never mind.",
+                "Where do boats go when they're sick? To the boat doc.",
+                "I don't trust those trees. They seem kind of shady.",
+                "My wife is really mad at the fact that I have no sense of direction. So I packed up my stuff and right!",
+                "How do you get a squirrel to like you? Act like a nut.",
+                "Why don't eggs tell jokes? They'd crack each other up.",
+                "I don't trust stairs. They're always up to something.",
+                "What do you call someone with no body and no nose? Nobody knows.",
+                "Did you hear the rumor about butter? Well, I'm not going to spread it!",
+                "Why couldn't the bicycle stand up by itself? It was two tired.",
+                "What did one hat say to the other? Stay here! I\'m going on ahead.",
+                "Why did Billy get fired from the banana factory? He kept throwing away the bent ones." };
+        Message message = event.getMessage();
+        if (message.getContent().equals("-makemelaugh")) {
             event.getChannel().sendMessage(jokes[randomGenerator.nextInt(jokes.length)]);
         }
     }
