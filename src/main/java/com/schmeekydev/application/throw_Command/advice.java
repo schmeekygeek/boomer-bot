@@ -7,10 +7,7 @@ import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
 public class advice implements MessageCreateListener {
-    @Override
-    public void onMessageCreate(MessageCreateEvent event) {
-        Message message = event.getMessage();
-        String[] command = message.getContent().split(" ");
+    public static String getAdvice() {
         Random randomGenerator = new Random();
         String[] advices = { "Don\'t look at the calendar. Just keep celebrating every day.",
                 "Invest in quality pieces, they never  go out of style.",
@@ -95,10 +92,17 @@ public class advice implements MessageCreateListener {
                 "You have to be lucky, but I made the best of things when bad things happened. I also ate prunes every single day.",
                 "Do what you have to do. Don\'t analyze it, just do it.",
                 "Take it easy, enjoy life, what will be will be. Sleep well, have a Bailey's Irish Cream before bed if you have a cold—you will wake up fine the next morning." };
+        return advices[randomGenerator.nextInt(advices.length)];
+    }
+
+    @Override
+    public void onMessageCreate(MessageCreateEvent event) {
+        Message message = event.getMessage();
+        String[] command = message.getContent().split(" ");
 
         try {
             if (command[0].equalsIgnoreCase("throw") && command[1].equalsIgnoreCase("advice"))
-                event.getChannel().sendMessage(advices[randomGenerator.nextInt(advices.length)]);
+                event.getChannel().sendMessage(getAdvice());
         } catch (Exception e) {
 
         }

@@ -1,0 +1,4 @@
+com\schmeekydev\application\Main.class
+com\schmeekydev\application\throw_Command\advice.class
+com\schmeekydev\application\throw_Command\joke.class
+com\schmeekydev\application\greet.class
