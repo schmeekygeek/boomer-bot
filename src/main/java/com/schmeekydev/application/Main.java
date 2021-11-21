@@ -15,7 +15,7 @@ import com.schmeekydev.application.throw_Command.Advice;
 import com.schmeekydev.application.throw_Command.Joke;
 import com.schmeekydev.application.throw_Command.Meme;
 import org.javacord.api.DiscordApi;
-import org.javacord.api.DiscordApiBuilder;
+import org       .javacord.api.DiscordApiBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

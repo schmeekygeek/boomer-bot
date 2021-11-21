@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.io.File;
 import java.util.Random;
 
+import java.util.Random;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
@@ -11,9 +12,9 @@ import org.javacord.api.listener.message.MessageCreateListener;
 public class Meme implements MessageCreateListener {
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
-        Random randomGenerator = new Random();
+  Random randomGenerator = new Random();
 
-        String[] text = event.getMessage().getContent().split(" ");
+String[] text = event.getMessage().getContent().split(" ");
 
         EmbedBuilder memeEmbed = new EmbedBuilder();
         memeEmbed.setTitle("Here, take a look at this meme.\nHahahaha so funnyy!!!!")
